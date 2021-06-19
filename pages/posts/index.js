@@ -1,6 +1,7 @@
 import AllPosts from "../../components/posts/all-posts";
 import {getAllPosts} from "../../lib/posts-util";
 import { Fragment } from 'react';
+import Head from "next/head";
 
 function AllPostsPage(props) {
   return (

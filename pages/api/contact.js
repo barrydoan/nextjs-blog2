@@ -21,9 +21,11 @@ async function handler(req, res) {
     };
 
     let client;
+    const connectionString = `mongodb+srv://${process.env.mongodb_username}:${process.env.mongodb_password}@cluster0.8h2u5.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
+
     try {
       client = await MongoClient.connect(
-        'mongodb+srv://nhat:nhat@cluster0.8h2u5.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+        connectionString
       );
     } catch (error) {
       res.status(500).json({ message: 'Could not connect to database' });
